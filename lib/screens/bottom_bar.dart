@@ -67,11 +67,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           ),
       body: _pages![_selectedindex]['page'],
       bottomNavigationBar: BottomAppBar(
-        elevation: 5,
+        elevation: 20,
         shape: const CircularNotchedRectangle(),
         child: Container(
           height: 60,
-//          decoration: BoxDecoration(border: BorderSide(width: 0.5)),
+          decoration:
+              BoxDecoration(border: Border(top: BorderSide(width: 0.5))),
           child: BottomNavigationBar(
             onTap: selectedpage,
             backgroundColor: Theme.of(context).primaryColor,
