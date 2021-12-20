@@ -29,12 +29,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   void initState() {
     super.initState();
-     _pages = [
-      {'page':  HomeScreen(), 'title': 'Home Screen'},
-      {'page':  FeedsScreen(), 'title': 'Feeds Screen'},
-      {'page':  SearchScreen(), 'title': 'Search Screen'},
-      {'page':  CartScreen(), 'title': 'Cart Screen'},
-      {'page':  UserInfo(), 'title': 'User Screen'},
+    _pages = [
+      {'page': HomeScreen()},
+      {'page': FeedsScreen()},
+      {'page': SearchScreen()},
+      {'page': CartScreen()},
+      {'page': UserInfo()},
     ];
   }
 
@@ -48,9 +48,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text(_pages[_selectedindex]['title'])),
-      ),
+      // appBar: AppBar(
+      //   title: Center(child: Text(_pages[_selectedindex]['title'])),
+      // ),
       body: _pages![_selectedindex]['page'],
       bottomNavigationBar: BottomAppBar(
         notchMargin: 3,
