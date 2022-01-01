@@ -8,4 +8,5 @@ class MyAppIcons {
   static IconData search = FontAwesomeIcons.search;
   static IconData user = FontAwesomeIcons.user;
   static IconData cart = FontAwesomeIcons.shoppingBag;
+  static IconData cross = FontAwesomeIcons.cross;
 }
