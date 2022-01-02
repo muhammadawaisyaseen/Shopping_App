@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/consts/colors.dart';
 
-import 'cart_empty.dart';
-import 'cart_full.dart';
+import '../widget/cart_empty.dart';
+import '../widget/cart_full.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -50,21 +51,31 @@ class CartScreen extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Material(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.red,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(30),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Checkout",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Theme.of(ctx).textSelectionColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    gradient: LinearGradient(colors: [
+                      ColorsConsts.gradiendLStart,
+                      ColorsConsts.gradiendLEnd,
+                    ], stops: [
+                      0.0,
+                      0.7
+                    ])),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(30),
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Checkout",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Theme.of(ctx).textSelectionColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                 ),

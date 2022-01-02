@@ -61,12 +61,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               const BoxDecoration(border: Border(top: BorderSide(width: 1))),
           child: BottomNavigationBar(
             onTap: selectedpage,
-            backgroundColor: Theme.of(context).primaryColor,
+            backgroundColor: Colors.grey,
+            //Theme.of(context).primaryColor,
             unselectedItemColor: Theme.of(context).textSelectionColor,
             selectedItemColor: Colors.purple,
             currentIndex: _selectedindex,
-            //selectedFontSize: 16,
-            selectedLabelStyle: const TextStyle(fontSize: 16),
+            //selectedFontSize: 16,            selectedLabelStyle: const TextStyle(fontSize: 16),
             items: [
               BottomNavigationBarItem(
                   icon: FaIcon(MyAppIcons.home),

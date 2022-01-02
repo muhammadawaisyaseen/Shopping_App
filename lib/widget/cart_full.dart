@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/consts/colors.dart';
 import 'package:shopping_app/provider/dark_theme_provider.dart';
 
 class CartFull extends StatefulWidget {
@@ -21,8 +22,8 @@ class _CartFullState extends State<CartFull> {
           topRight: Radius.circular(20),
           bottomRight: Radius.circular(20),
         ),
-        //color: Colors.white,
-        color: Theme.of(context).backgroundColor,
+        //color: Theme.of(context).backgroundColor,
+        color: Colors.blue,
       ),
       child: Row(
         children: [
@@ -129,12 +130,15 @@ class _CartFullState extends State<CartFull> {
                         child: Container(
                           padding: EdgeInsets.all(8),
                           width: MediaQuery.of(context).size.width * 0.12,
-                          color: Colors.purple,
-                          // decoration: BoxDecoration(
-                          //   gradient: LinearGradient(colors: [
-                          //     cololorsConst.
-                          //   ])
-                          // ),
+                          //color: Colors.purple,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                            ColorsConsts.gradiendLStart,
+                            ColorsConsts.gradiendLEnd,
+                          ], stops: [
+                            0.0,
+                            0.7
+                          ])),
                           child: Text(
                             "143",
                             textAlign: TextAlign.center,
