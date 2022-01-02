@@ -31,7 +31,8 @@ class _CartFullState extends State<CartFull> {
             decoration: const BoxDecoration(
                 image: DecorationImage(
               image: NetworkImage(
-                  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80"),
+                  "https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/20743/182602/AODLEE-Fashion-Men-Sneakers-for-Men-Casual-Shoes-Breathable-Lace-up-Mens-Casual-Shoes-Spring-Leather__46717.1545973953.jpg?c=2?imbypass=on"),
+              //"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80"),
               fit: BoxFit.fill,
             )),
           ),
@@ -135,7 +136,7 @@ class _CartFullState extends State<CartFull> {
                           //   ])
                           // ),
                           child: Text(
-                            "q",
+                            "143",
                             textAlign: TextAlign.center,
                           ),
                         ),

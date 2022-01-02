@@ -58,7 +58,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         shape: const CircularNotchedRectangle(),
         child: Container(
           decoration:
-              const BoxDecoration(border: Border(top: BorderSide(width: 0.5))),
+              const BoxDecoration(border: Border(top: BorderSide(width: 1))),
           child: BottomNavigationBar(
             onTap: selectedpage,
             backgroundColor: Theme.of(context).primaryColor,
