@@ -38,6 +38,9 @@ dependencies:
   provider: ^6.0.1
   list_tile_switch:
   shared_preferences: ^2.0.11
+  badges: ^2.0.2
+  backdrop: ^0.7.1
+  #flutter_staggered_grid_view: ^0.3.3
 
 dev_dependencies:
   flutter_test:

@@ -38,7 +38,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     ];
   }
 
-  int _selectedindex = 3;
+  int _selectedindex = 0;
   void selectedpage(int index) {
     setState(() {
       _selectedindex = index;

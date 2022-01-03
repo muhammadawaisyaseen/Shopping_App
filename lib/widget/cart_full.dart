@@ -55,6 +55,7 @@ class _CartFullState extends State<CartFull> {
                           ),
                         ),
                       ),
+                      // Material will take space as much as required for a child
                       Material(
                         color: Colors.transparent,
                         child: InkWell(
@@ -110,6 +111,7 @@ class _CartFullState extends State<CartFull> {
                                 : Theme.of(context).accentColor),
                       ),
                       Spacer(),
+                      // Material will take space as much as required for a child
                       Material(
                         color: Colors.transparent,
                         child: InkWell(
@@ -145,6 +147,7 @@ class _CartFullState extends State<CartFull> {
                           ),
                         ),
                       ),
+                      // Material will take space as much as required for a child
                       Material(
                         color: Colors.transparent,
                         child: InkWell(

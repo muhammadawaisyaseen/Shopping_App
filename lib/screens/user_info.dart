@@ -165,6 +165,9 @@ class _UserInfoState extends State<UserInfo> {
                       thickness: 1,
                       color: Colors.grey,
                     ),
+                    // We can create listtileswitch without using dependency and without other things. We can create only by writing following code.
+                    //ListTileSwitch(value: true, onChanged: (value){},title: Text("Dark Theme"),),
+                    
                     ListTileSwitch(
                       value: themechange.darkTheme,
                       leading: FaIcon(FontAwesomeIcons.moon),
