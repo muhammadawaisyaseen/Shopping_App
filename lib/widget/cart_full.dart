@@ -16,7 +16,8 @@ class _CartFullState extends State<CartFull> {
     final themechange = Provider.of<DarkThemeProvider>(context);
     return Container(
       margin: EdgeInsets.all(10),
-      height: 135,
+      //height: 135,
+      height: MediaQuery.of(context).size.height * 0.18,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20),

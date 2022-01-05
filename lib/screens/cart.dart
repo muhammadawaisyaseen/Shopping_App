@@ -28,7 +28,7 @@ class CartScreen extends StatelessWidget {
             body: Container(
               margin: EdgeInsets.only(bottom: 60),
               child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 9,
                   itemBuilder: (BuildContext ctx, int index) {
                     return CartFull();
                   }),
