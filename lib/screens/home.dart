@@ -2,6 +2,7 @@ import 'package:backdrop/backdrop.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/consts/colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 //import 'package:card_carousel/card_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,12 +13,22 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> imgList = [
-    'assets/images/carousel1.png',
+  final List<String> imgList1 = [
+    "assets/images/carousel1.png",
     "assets/images/carousel2.jpeg",
     "assets/images/carousel3.jpg",
     "assets/images/carousel4.png",
     "assets/images/carousel5.jpg",
+  ];
+  final List<String> brandimages = [
+    "assets/images/addidas.jpg",
+    "assets/images/apple.jpg",
+    "assets/images/Dell.jpg",
+    "assets/images/h&m.jpg",
+    "assets/images/Huawei.jpg",
+    "assets/images/nike.jpg",
+    "assets/images/Dell.jpg",
+    "assets/images/samsung.jpg"
   ];
   int _current = 0;
   @override
@@ -25,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Center(
         child: BackdropScaffold(
+          frontLayerBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
           headerHeight: MediaQuery.of(context).size.height * 0.25,
           appBar: BackdropAppBar(
             title: Text("Home"),
@@ -73,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         scrollDirection: Axis.vertical,
                         autoPlay: true,
                       ),
-                      items: imgList
+                      items: imgList1
                           .map((item) => Container(
                                 child: Container(
                                   margin: EdgeInsets.all(5.0),
@@ -83,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Stack(
                                         children: <Widget>[
                                           //Image.network(imgList[0], fit: BoxFit.cover, width: 1000.0),
-                                          Image.asset(imgList[_current],
+                                          Image.asset(imgList1[_current],
                                               fit: BoxFit.fill, width: 1000.0),
                                           Positioned(
                                             bottom: 0.0,
@@ -139,6 +151,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         )),
                   )
                 ]),
+              ),
+              Container(
+                height: 200,
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: Swiper(
+                  indicatorLayout: PageIndicatorLayout.SCALE,
+                  autoplay: true,
+                  autoplayDelay: 1000,
+                  itemCount: brandimages.length,
+                  pagination: SwiperPagination(),
+                  control: SwiperControl(),
+                  fade: 0.85,
+                  viewportFraction: 0.85,
+                  scale: 0.85,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                      child: Container(
+                        color:Colors.blueGrey,
+                        child: Image.asset(
+                          brandimages[index],
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),
