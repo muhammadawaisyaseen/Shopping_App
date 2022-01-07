@@ -4,6 +4,7 @@ import 'package:shopping_app/consts/colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:shopping_app/widget/category.dart';
+import 'package:shopping_app/widget/popular_products.dart';
 //import 'package:card_carousel/card_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -151,12 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   // This is a parent Container and in "CategoryWidget()" container is child container
                   //(Child's height and width will not greater than Parent
                   height: 180,
-                  //width: 300,
                   width: double.infinity,
                   child: ListView.builder(
                     itemCount: 5,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext ctx, int myindex) {
+                      // parameter index is coming from CategoryWidget Class.
                       return CategoryWidget(index: myindex);
                     },
                   ),
@@ -210,18 +211,39 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                // SizedBox(width: 10,),
-                // Container(
-
-                //   child: ListView.builder(
-                //     itemBuilder: (context, index) {
-                //       return CategoryWidget(
-                //         index: index,
-                //       );
-                //     },
-                //     itemCount: 7,
-                //   ),
-                // )
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(children: [
+                    Text("Popular Products",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                        )),
+                    Spacer(),
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text("View all...",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.red,
+                          )),
+                    )
+                  ]),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 285,
+                  margin: EdgeInsets.symmetric(horizontal: 3),
+                  //padding: EdgeInsets.all(8),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 8,
+                    itemBuilder: (BuildContext ctx, int index) {
+                      return PopularProducts();
+                    },
+                  ),
+                )
               ],
             ),
           ),
