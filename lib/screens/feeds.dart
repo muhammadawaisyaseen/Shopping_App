@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/feeds_products.dart';
+import 'package:shopping_app/widget/feeds_products.dart';
 //import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FeedsScreen extends StatelessWidget {

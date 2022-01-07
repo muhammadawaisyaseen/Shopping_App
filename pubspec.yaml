@@ -81,7 +81,11 @@ flutter:
     - assets/images/Huawei.jpg
     - assets/images/nike.jpg
     - assets/images/samsung.jpg
-
+    - assets/images/style.jpg
+    - assets/images/laptops.jpg
+    - assets/images/phones.jpg
+    - assets/images/clothes.jpg
+    - assets/images/shoes.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
