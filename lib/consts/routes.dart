@@ -3,4 +3,5 @@ class MyRoutes {
   static String routecart = "/cartpage";
   static String routewishlist = "/wishlistspage";
   static String routeuploadnewproduct = "/uploadnewproductpage";
+  static String routeproductdetails = "/productdetailspage";
 }

@@ -7,12 +7,6 @@ class CategoryWidget extends StatelessWidget {
   }) : super(key: key);
   int index;
   List<Map<String, Object>> categories = [
-    // - assets/images/style.jpg
-    // - assets/images/laptops.jpg
-    // - assets/images/phones.jpg
-    // - assets/images/clothes.jpg
-    // - assets/images/shoes.jpg
-
     {
       'categoryName': 'Stylish',
       'categoryImagesPath': 'assets/images/style.jpg',
@@ -33,26 +27,6 @@ class CategoryWidget extends StatelessWidget {
       'categoryName': 'Shoes',
       'categoryImagesPath': 'assets/images/shoes.jpg',
     },
-    // {
-    //   'categoryName': 'Phones',
-    //   'categoryImagesPath': 'assets/images/samsung.jpg',
-    // },
-    // {
-    //   'categoryName': 'Phones',
-    //   'categoryImagesPath': 'assets/images/samsung.jpg',
-    // },
-    // {
-    //   'categoryName': 'Laptops',
-    //   'categoryImagesPath': 'assets/images/samsung.jpg',
-    // },
-    // {
-    //   'categoryName': 'Laptops',
-    //   'categoryImagesPath': 'assets/images/samsung.jpg',
-    // },
-    // {
-    //   'categoryName': 'Laptops',
-    //   'categoryImagesPath': 'assets/images/samsung.jpg',
-    // },
   ];
   @override
   Widget build(BuildContext context) {
