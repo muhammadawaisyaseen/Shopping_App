@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/consts/theme_data.dart';
+import 'package:shopping_app/consts/routes.dart';
 import 'package:shopping_app/provider/dark_theme_provider.dart';
 import 'package:shopping_app/screens/bottom_bar.dart';
+import 'package:shopping_app/screens/cart.dart';
+import 'package:shopping_app/screens/feeds.dart';
+import 'package:shopping_app/screens/wishlist.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,6 +49,12 @@ class _MyAppState extends State<MyApp> {
             title: 'Flutter Demo',
             theme: Styles.themeData(themechangeprovider.darkTheme, context),
             home: BottomBarScreen(),
+            routes: {
+              MyRoutes.routefeeds: (context) => FeedsScreen(),
+              MyRoutes.routecart: (context) => CartScreen(),
+              MyRoutes.routewishlist: (context) => WishlistScreen(),
+              MyRoutes.routeuploadnewproduct: (context) => FeedsScreen(),
+            },
           );
         }));
   }

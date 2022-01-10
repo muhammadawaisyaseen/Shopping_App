@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import 'package:ionicons/ionicons.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/consts/my_icons.dart';
+import 'package:shopping_app/consts/routes.dart';
 import 'package:shopping_app/provider/dark_theme_provider.dart';
 
 class UserInfo extends StatefulWidget {
@@ -125,26 +127,32 @@ class _UserInfoState extends State<UserInfo> {
                     Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          //Navigator.of(ctx).pushNamed(routeName);
+                          Navigator.of(context)
+                              .pushNamed(MyRoutes.routewishlist);
+                        },
                         splashColor: Colors.red,
                         child: ListTile(
                           title: Text('Wishlist'),
                           trailing: Icon(Icons.chevron_right_rounded),
-                          leading: FaIcon(FontAwesomeIcons.heart),
+                          leading: FaIcon(MyAppIcons.wishlist),
                         ),
                       ),
                     ),
                     ListTile(
-                      onTap: () {},
+                      onTap: () {
+                      Navigator.of(context).pushNamed(MyRoutes.routecart);
+                      },
                       title: Text('Cart'),
                       trailing: Icon(Icons.chevron_right_rounded),
-                      leading: FaIcon(FontAwesomeIcons.shoppingBag),
+                      leading: Icon(Icons.shopping_cart),
                     ),
-                    ListTile(
-                      title: Text('My Orders'),
-                      trailing: Icon(Icons.chevron_right_rounded),
-                      leading: FaIcon(FontAwesomeIcons.shoppingBag),
-                    ),
+                    // ListTile(
+                    //   title: Text('My Orders'),
+                    //   trailing: Icon(Icons.chevron_right_rounded),
+                    //   leading: FaIcon(FontAwesomeIcons.shoppingBag),
+                    // ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: userTitle(title: 'User Information'),
@@ -167,13 +175,13 @@ class _UserInfoState extends State<UserInfo> {
                     ),
                     // We can create listtileswitch without using dependency and without other things. We can create only by writing following code.
                     //ListTileSwitch(value: true, onChanged: (value){},title: Text("Dark Theme"),),
-                    
+
                     ListTileSwitch(
                       value: themechange.darkTheme,
                       leading: FaIcon(FontAwesomeIcons.moon),
                       onChanged: (value) {
                         setState(() {
-                           themechange.darkTheme = value;
+                          themechange.darkTheme = value;
                         });
                       },
                       visualDensity: VisualDensity.comfortable,

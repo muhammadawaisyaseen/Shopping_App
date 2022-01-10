@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/consts/colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:shopping_app/inner_screens.dart/brands_navigation_rail%20copy.dart';
+import 'package:shopping_app/widget/backlayer.dart';
+//import 'package:shopping_app/inner_screens.dart/brands_navigation_rail%20copy.dart';
 import 'package:shopping_app/widget/category.dart';
 import 'package:shopping_app/widget/popular_products.dart';
 //import 'package:card_carousel/card_carousel.dart';
@@ -41,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
           frontLayerBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
           headerHeight: MediaQuery.of(context).size.height * 0.25,
           appBar: BackdropAppBar(
-            title: Text("Home"),
-            leading: BackdropToggleButton(
+            title: const Text("Home"),
+            leading: const BackdropToggleButton(
               icon: AnimatedIcons.home_menu,
             ),
             flexibleSpace: Container(
@@ -56,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
               IconButton(
                 onPressed: () {},
                 iconSize: 15,
-                padding: EdgeInsets.all(10),
-                icon: CircleAvatar(
+                padding: const EdgeInsets.all(10),
+                icon: const CircleAvatar(
                   radius: 15,
                   backgroundColor: Colors.white,
                   child: CircleAvatar(
@@ -69,9 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          backLayer: Center(
-            child: Text("Back Layer"),
-          ),
+          backLayer: BackLayerMenu(),
           frontLayer: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,10 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         items: imgList1
                             .map((item) => Container(
                                   child: Container(
-                                    margin: EdgeInsets.all(5.0),
+                                    margin: const EdgeInsets.all(5.0),
                                     child: ClipRRect(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.0)),
+                                        borderRadius: const BorderRadius.all(
+                                            const Radius.circular(5.0)),
                                         child: Stack(
                                           children: <Widget>[
                                             //Image.network(imgList[0], fit: BoxFit.cover, width: 1000.0),
@@ -107,25 +108,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                               left: 0.0,
                                               right: 0.0,
                                               child: Container(
-                                                decoration: BoxDecoration(
-                                                  gradient: LinearGradient(
+                                                decoration: const BoxDecoration(
+                                                  gradient:
+                                                      const LinearGradient(
                                                     colors: [
-                                                      Color.fromARGB(
+                                                      const Color.fromARGB(
                                                           200, 0, 0, 0),
-                                                      Color.fromARGB(0, 0, 0, 0)
+                                                      const Color.fromARGB(
+                                                          0, 0, 0, 0)
                                                     ],
                                                     begin:
                                                         Alignment.bottomCenter,
                                                     end: Alignment.topCenter,
                                                   ),
                                                 ),
-                                                padding: EdgeInsets.symmetric(
-                                                    vertical: 10.0,
-                                                    horizontal: 20.0),
-                                                child: Text(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 10.0,
+                                                        horizontal: 20.0),
+                                                child: const Text(
                                                   //'No. ${imgList.indexOf(item)} image',
                                                   "No matter we give text or not bcoz color is transparent",
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     color: Colors.transparent,
                                                     fontSize: 20.0,
                                                     fontWeight: FontWeight.bold,
@@ -140,8 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             .toList())),
                 //-----------------------------
 
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text("Catagories",
                       style: TextStyle(
                         fontSize: 20,
@@ -167,15 +171,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [
-                    Text("Popular Brands",
-                        style: TextStyle(
+                    const Text("Popular Brands",
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w800,
                         )),
-                    Spacer(),
+                    const Spacer(),
                     FlatButton(
-                      onPressed: () {},
-                      child: Text("View all...",
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => BrandNavigationRailScreen(
+                            selectedIndex: 7,
+                          ),
+                        ));
+                      },
+                      child: const Text("View all...",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
@@ -190,10 +200,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Swiper(
                     indicatorLayout: PageIndicatorLayout.SCALE,
                     autoplay: true,
-                    autoplayDelay: 1000,
+                    autoplayDelay: 1800,
                     itemCount: brandimages.length,
-                    pagination: SwiperPagination(),
-                    control: SwiperControl(),
+                    pagination: const SwiperPagination(),
+                    control: const SwiperControl(),
                     fade: 0.85,
                     viewportFraction: 0.85,
                     scale: 0.85,
@@ -214,15 +224,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [
-                    Text("Popular Products",
+                    const Text("Popular Products",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w800,
                         )),
-                    Spacer(),
+                    const Spacer(),
                     FlatButton(
                       onPressed: () {},
-                      child: Text("View all...",
+                      child: const Text("View all...",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
@@ -234,16 +244,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: double.infinity,
                   height: 285,
-                  margin: EdgeInsets.symmetric(horizontal: 3),
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
                   //padding: EdgeInsets.all(8),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 8,
                     itemBuilder: (BuildContext ctx, int index) {
-                      return PopularProducts();
+                      return const PopularProducts();
                     },
                   ),
-                )
+                ),
+                // FlatButton(
+                //   onPressed: () {
+                //     // Navigator.of(context).pushNamed(
+                //     //   BrandNavigationRailScreen.routeName,
+                //     //   arguments: {
+                //     //     7,
+                //     //   },
+                //     // );
+                //   },
+                //   child: const Text(
+                //     'View all...',
+                //     style: TextStyle(
+                //         fontWeight: FontWeight.w800,
+                //         fontSize: 15,
+                //         color: Colors.red),
+                //   ),
+                // )
               ],
             ),
           ),

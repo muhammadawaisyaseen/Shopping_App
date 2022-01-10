@@ -87,7 +87,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                   label: "search"),
               //............................
               BottomNavigationBarItem(
-                  icon: FaIcon(MyAppIcons.cart),
+                  //icon: FaIcon(MyAppIcons.cart),
+                  icon: Icon(Icons.shopping_cart),
                   tooltip: "shoping bags",
                   label: "cart"),
               //............................
